@@ -136,7 +136,7 @@ namespace Sustainsys.Saml2.Internal
         {
             var xmlDoc = XmlHelpers.XmlDocumentFromString(element.OuterXml);
 
-            var exml = new RSAEncryptedXml(xmlDoc, (RSA)key);
+            var exml = RSAEncryptedXmlFactory.Create(xmlDoc, (RSA)key);
 
             exml.DecryptDocument();
 

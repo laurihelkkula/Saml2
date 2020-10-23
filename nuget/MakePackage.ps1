@@ -30,6 +30,10 @@ if (Test-Path "Sustainsys.Saml2.AspNetCore2\bin\Release")
 {
 	del Sustainsys.Saml2.AspNetCore2\bin\Release\*.dll
 }
+if (Test-Path "Sustainsys.Saml2.AesGcmExtension\bin\Release")
+{
+	del Sustainsys.Saml2.AesGcmExtension\bin\Release\*.dll
+}
 echo "Creating nuspec files..."
 
 $releaseNotesContent="`n $((get-content nuget\ReleaseNotes.txt) -join "`n`")`n";
@@ -50,11 +54,13 @@ function Update-Csproj($projectName)
 
 copy Sustainsys.Saml2\Sustainsys.Saml2.csproj Sustainsys.Saml2\Sustainsys.Saml2.csproj.bak
 copy Sustainsys.Saml2.AspNetCore2\Sustainsys.Saml2.AspNetCore2.csproj Sustainsys.Saml2.AspNetCore2\Sustainsys.Saml2.AspNetCore2.csproj.bak
+copy Sustainsys.Saml2.AesGcmExtension\Sustainsys.Saml2.AesGcmExtension.csproj Sustainsys.Saml2.AesGcmExtension\Sustainsys.Saml2.AesGcmExtension.csproj.bak
 Update-Csproj("Sustainsys.Saml2")
 Create-Nuspec("Sustainsys.Saml2.Mvc")
 Create-Nuspec("Sustainsys.Saml2.Owin")
 Create-Nuspec("Sustainsys.Saml2.HttpModule")
 Update-Csproj("Sustainsys.Saml2.AspNetCore2")
+Update-Csproj("Sustainsys.Saml2.AesGcmExtension")
 
 echo "Building packages..."
 
@@ -65,10 +71,13 @@ nuget pack -build -outputdirectory nuget Sustainsys.Saml2.Mvc\Sustainsys.Saml2.M
 nuget pack -build -outputdirectory nuget Sustainsys.Saml2.Owin\Sustainsys.Saml2.Owin.csproj
 nuget pack -build -outputdirectory nuget Sustainsys.Saml2.HttpModule\Sustainsys.Saml2.HttpModule.csproj
 dotnet pack -c Release -o .\nuget Sustainsys.Saml2.AspNetCore2\Sustainsys.Saml2.AspNetCore2.csproj /p:Version=$version
+dotnet pack -c Release -o .\nuget Sustainsys.Saml2.AesGcmExtension\Sustainsys.Saml2.AesGcmExtension.csproj /p:Version=$version
 
 copy Sustainsys.Saml2\Sustainsys.Saml2.csproj.bak Sustainsys.Saml2\Sustainsys.Saml2.csproj
 del Sustainsys.Saml2\Sustainsys.Saml2.csproj.bak 
 copy Sustainsys.Saml2.AspNetCore2\Sustainsys.Saml2.AspNetCore2.csproj.bak Sustainsys.Saml2.AspNetCore2\Sustainsys.Saml2.AspNetCore2.csproj
 del Sustainsys.Saml2.AspNetCore2\Sustainsys.Saml2.AspNetCore2.csproj.bak 
+copy Sustainsys.Saml2.AesGcmExtension\Sustainsys.Saml2.AesGcmExtension.csproj.bak Sustainsys.Saml2.AesGcmExtension\Sustainsys.Saml2.AesGcmExtension.csproj
+del Sustainsys.Saml2.AesGcmExtension\Sustainsys.Saml2.AesGcmExtension.csproj.bak
 
 popd

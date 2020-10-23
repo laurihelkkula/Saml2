@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageReleaseNotes>$releaseNotes$</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Sustainsys/Saml2</PackageProjectUrl>
+    <PackageIcon>sustainsys.png</PackageIcon>
+    <PackageTags>SAML2 authentication AspNet SAML SSO</PackageTags>
+    <PackageDescription>AES-GCM support for Sustainsys.Saml2 v2.8.</PackageDescription>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Sustainsys</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sustainsys.Saml2\Sustainsys.Saml2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\nuget\sustainsys.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>

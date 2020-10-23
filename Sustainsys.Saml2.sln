@@ -97,6 +97,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config-elements", "config-e
 		docs\config-elements\sustainsys-saml2.rst = docs\config-elements\sustainsys-saml2.rst
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sustainsys.Saml2.AesGcmExtension", "Sustainsys.Saml2.AesGcmExtension\Sustainsys.Saml2.AesGcmExtension.csproj", "{C2A33646-A08F-4789-99E0-CB4A2D73D14E}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Tests\Tests.Shared\Tests.Shared.projitems*{82f84e61-1292-47cf-b0dc-59f26ec56c32}*SharedItemsImports = 13
@@ -184,6 +186,10 @@ Global
 		{A6DA495F-3AE8-482B-BC63-1F70BC752654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6DA495F-3AE8-482B-BC63-1F70BC752654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6DA495F-3AE8-482B-BC63-1F70BC752654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A33646-A08F-4789-99E0-CB4A2D73D14E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A33646-A08F-4789-99E0-CB4A2D73D14E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A33646-A08F-4789-99E0-CB4A2D73D14E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A33646-A08F-4789-99E0-CB4A2D73D14E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
